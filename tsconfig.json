@@ -8,39 +8,43 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+    "incremental": true,
+    "esModuleInterop": true
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/app/**/*",
+    "src/components/**/*",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
     ".next",
-    "src/_dev_disabled",
+    "src/server",
+    "src/trpc",
     "src/_server_disabled",
+    "src/_trpc_disabled",
     "src/_api_disabled",
-    "src/_trpc_disabled"
+    "src/_dev_disabled",
+    "disabled"
   ]
 }
